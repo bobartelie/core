@@ -22,4 +22,4 @@ jobs:
           external_repository: bobartelie/site
           publish_dir: site/_site
           publish_branch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
