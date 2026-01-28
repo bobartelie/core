@@ -19,7 +19,8 @@ jobs:
       - run: pnpm --filter site build
       - uses: peaceiris/actions-gh-pages@v4
         with:
+          personal_token: ${{ secrets.GH_PAGES_PAT }}
           external_repository: bobartelie/site
           publish_dir: site/_site
           publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Deploy site"
