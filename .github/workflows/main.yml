@@ -25,7 +25,6 @@ jobs:
           publish_dir: site/_site
           publish_branch: main
           commit_message: "Deploy site [skip ci]"
-          force_orphan: true
       # Deploy for app
       - uses: peaceiris/actions-gh-pages@v4
         with:
@@ -34,4 +33,3 @@ jobs:
           publish_dir: app/_site
           publish_branch: main
           commit_message: "Deploy app [skip ci]"
-          force_orphan: true
