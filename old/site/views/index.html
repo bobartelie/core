@@ -1,0 +1,102 @@
+<section class="grid">
+    <img src="hero.png" alt="" width="560">
+    <div>
+        <h1>
+            <div>Pense</div>
+            <div>Respire</div>
+            <div>Se Inspire!</div>
+        </h1>
+    </div>
+</section>
+<section>
+    <p>
+        Na BobArtelie, voce transforma talentos em habilidade e habilidade em carreira. Aprenda no seu ritmo, com orientaçao clara em um ambiente descontraido
+    </p>
+</section>
+<section>
+    <h2>
+        <div>Cursos sob medida</div>
+        <div>De artista para artista</div>
+    </h2>
+    
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+        {% for course in baserow.courses.results %}
+        <div>
+            <h3>
+                {{ course.Name }}
+            </h3>
+            <img src="{{ course.Thumbnail[0].url }}" alt="">
+            <a href="/curso">Ver curso</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="grid">
+    <div>
+        <h2>Oi, eu sou o Bob</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod quibusdam, libero non quas consectetur est, autem debitis doloremque consequuntur qui porro? Dolor nihil exercitationem autem consequatur beatae distinctio explicabo voluptates.
+        </p>
+        <p>
+            Siga-me nas redes sociais
+            <a href="">Instagram</a>
+            <a href="">Behance</a>
+        </p>        
+    </div>
+    <div>
+        <img src="bob.jpg" alt="" width="560">
+    </div>
+</section>
+
+<section>
+    <h2>
+        <div>Conheça os nossos alunos</div>
+    </h2>
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        {% for aluno in baserow.testimonials.results %}
+        <article>                
+            <img src="{{ aluno.Imagem[0].url }}" width="50" style="border-radius: 100%; width: 3rem; height: 3rem;" alt="" srcset="">
+            <blockquote>
+                {{ aluno.Depoimento}}
+            </blockquote>
+            <footer>
+                <cite>{{ aluno.Name }}</cite>
+            </footer>
+        </article>
+        {% endfor %}
+        <br>
+    </div>
+</section>
+
+<section>
+    <h2>Galeria</h2>
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        {% for image in baserow.gallery.results %}
+        <img src="{{ image.Imagem[0].url }}" alt="">
+        {% endfor %}
+    </div>
+</section>
+
+<section class="grid">
+    <div>
+        <h2>
+            <div>Perguntas</div>
+            <div>Frequentes</div>
+        </h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt atque laudantium ullam nesciunt, eveniet hic deleniti ipsum maxime est eligendi cum non velit, architecto tempora! Vel porro cupiditate delectus. Excepturi!
+        </p>
+    </div>
+    <div>
+        {% for question in baserow.faq.results %}
+        <article>
+            <details>
+                <summary>{{ question.Name }}</summary>
+                <p>
+                    {{ question.Notes }}
+                </p>
+            </details>
+        </article>
+        {% endfor %}
+    </div>
+</section>

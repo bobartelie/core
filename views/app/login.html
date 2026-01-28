@@ -1,0 +1,14 @@
+<section>
+    <div>
+        <h1>Login</h1>
+        <article>
+            <form @submit.prevent="login">
+                {% include "components/input.html" label:"Email" type:"text" name:"nome" %}
+                {% include "components/input.html" label:"Senha" type:"password" name:"password" %}
+                <button>
+                    Entrar
+                </button>
+            </form>
+        </article>
+    </div>
+</section>

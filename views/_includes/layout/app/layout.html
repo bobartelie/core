@@ -1,0 +1,15 @@
+---
+layout: base.html
+---
+
+<body x-data hx-ext="head-support" hx-target="main" hx-select="main" hx-swap="outerHTML">
+    <pre x-text="JSON.stringify($store.user)"></pre>
+ 
+    {% include "./header.html" %} 
+    <main>
+        {{ content }}
+    </main>
+    {% include "./footer.html" %} 
+</body>
+
+
