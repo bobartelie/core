@@ -22,6 +22,6 @@ jobs:
           personal_token: ${{ secrets.GH_PAGES_PAT }}
           external_repository: bobartelie/site
           publish_dir: site/_site
-          publish_branch: gh-pages
-          commit_message: "Deploy site"
+          publish_branch: main
+          commit_message: "Deploy site [skip ci]"
           force_orphan: true
