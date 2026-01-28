@@ -24,3 +24,4 @@ jobs:
           publish_dir: site/_site
           publish_branch: gh-pages
           commit_message: "Deploy site"
+          force_orphan: true
