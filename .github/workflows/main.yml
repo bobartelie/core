@@ -33,13 +33,13 @@ jobs:
       pages: write
       id-token: write
     steps:
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        personal_token: ${{ secrets.GH_PAGES_PAT }}
-        external_repository: bobartelie/site
-        publish_branch: main
-        publish_dir: site/_site
-        commit_message: "Deploy site [skip ci]"
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GH_PAGES_PAT }}
+          external_repository: bobartelie/site
+          publish_branch: main
+          publish_dir: site/_site
+          commit_message: "Deploy site [skip ci]"
 
   deploy-app:
     runs-on: ubuntu-latest
@@ -49,10 +49,10 @@ jobs:
       pages: write
       id-token: write
     steps:
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        personal_token: ${{ secrets.GH_PAGES_PAT }}
-        external_repository: bobartelie/app
-        publish_branch: main
-        publish_dir: app/_site
-        commit_message: "Deploy app [skip ci]"
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GH_PAGES_PAT }}
+          external_repository: bobartelie/app
+          publish_branch: main
+          publish_dir: app/_site
+          commit_message: "Deploy app [skip ci]"
