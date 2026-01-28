@@ -16,20 +16,22 @@ jobs:
       - uses: actions/setup-node@v4
       - uses: pnpm/action-setup@v4
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter site build
+      - run: pnpm run build
       # Deploy for website
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          personal_token: ${{ secrets.GH_PAGES_PAT }}
-          external_repository: bobartelie/site
-          publish_dir: site/_site
-          publish_branch: main
+          branch: main                
+          folder: site/_site
+          repository: bobartelie/site 
+          token: ${{ secrets.GH_PAGES_PAT }}
+          clean: false                
           commit_message: "Deploy site [skip ci]"
       # Deploy for app
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          personal_token: ${{ secrets.GH_PAGES_PAT }}
-          external_repository: bobartelie/app
-          publish_dir: app/_site
-          publish_branch: main
-          commit_message: "Deploy app [skip ci]"
+          branch: main                
+          folder: app/_site
+          repository: bobartelie/app
+          token: ${{ secrets.GH_PAGES_PAT }}
+          clean: false                
+          commit_message: "Deploy site [skip ci]"
