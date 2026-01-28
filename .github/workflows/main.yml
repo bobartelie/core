@@ -22,7 +22,7 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAGES_PAT }}
           external_repository: bobartelie/site
-          publish_branch: gh-pages
+          publish_branch: main
           publish_dir: site/_site
           commit_message: "Deploy site [skip ci]"
       # Deploy for app
@@ -30,6 +30,6 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAGES_PAT }}
           external_repository: bobartelie/app
-          publish_branch: gh-pages
+          publish_branch: main
           publish_dir: app/_site
           commit_message: "Deploy app [skip ci]"
